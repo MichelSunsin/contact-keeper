@@ -18,7 +18,7 @@ const ContactForm = () => {
     } else {
       setContact(defaultContact);
     }
-  }, [contactContext, current, defaultContact]);
+  }, [current, defaultContact]);
 
   const [contact, setContact] = useState({ defaultContact });
 
@@ -51,21 +51,21 @@ const ContactForm = () => {
         type='text'
         placeholder='Name'
         name='name'
-        value={name}
+        value={name || defaultContact.name}
         onChange={onChange}
       />
       <input
         type='text'
         placeholder='Email'
         name='email'
-        value={email}
+        value={email || defaultContact.email}
         onChange={onChange}
       />
       <input
         type='text'
         placeholder='Phone'
         name='phone'
-        value={phone}
+        value={phone || defaultContact.phone}
         onChange={onChange}
       />
       <h5>Contact Type</h5>
