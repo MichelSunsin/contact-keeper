@@ -18,9 +18,9 @@ const ContactForm = () => {
     } else {
       setContact(defaultContact);
     }
-  }, [current, defaultContact]);
+  }, [current]);
 
-  const [contact, setContact] = useState({ defaultContact });
+  const [contact, setContact] = useState(defaultContact);
 
   const { name, email, phone, type } = contact;
 
@@ -36,7 +36,6 @@ const ContactForm = () => {
       updateContact(contact);
     }
 
-    addContact(contact);
     clearAll();
   };
 
@@ -51,21 +50,21 @@ const ContactForm = () => {
         type='text'
         placeholder='Name'
         name='name'
-        value={name || defaultContact.name}
+        value={name}
         onChange={onChange}
       />
       <input
         type='text'
         placeholder='Email'
         name='email'
-        value={email || defaultContact.email}
+        value={email}
         onChange={onChange}
       />
       <input
         type='text'
         placeholder='Phone'
         name='phone'
-        value={phone || defaultContact.phone}
+        value={phone}
         onChange={onChange}
       />
       <h5>Contact Type</h5>
